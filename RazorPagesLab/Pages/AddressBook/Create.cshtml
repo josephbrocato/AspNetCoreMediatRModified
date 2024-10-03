@@ -1,0 +1,65 @@
+﻿@page
+@model CreateModel
+@{
+	ViewData["Title"] = "Create Address Book Entry";
+}
+
+<style>
+	.validation-summary-valid { display: none; }
+</style>
+
+<h1>Address Book Entry Details</h1>
+
+<form asp-page="Create"
+	method="post">
+	<span>@ViewData["Message"]</span>
+
+	<div asp-validation-summary="All"
+		class="validation-summary-errors">
+		<span>Please correct the following errors:</span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="CreateAddressRequest.Line1"></label>
+		<input asp-for="CreateAddressRequest.Line1"
+				type="text"
+				class="form-control"
+				id="line1"
+				placeholder="Line 1" />
+	</div>
+	<div class="form-group">
+		<label asp-for="CreateAddressRequest.Line2"></label>
+		<input asp-for="CreateAddressRequest.Line2"
+				type="text"
+				class="form-control"
+				id="line2"
+				placeholder="Line 2" />
+	</div>
+	<div class="form-group">
+		<label asp-for="CreateAddressRequest.City"></label>
+		<input asp-for="CreateAddressRequest.City"
+				type="text"
+				class="form-control"
+				id="City"
+				placeholder="City" />
+	</div>
+	<div class="form-group">
+		<label asp-for="CreateAddressRequest.State"></label>
+		<input asp-for="CreateAddressRequest.State"
+				type="text"
+				class="form-control"
+				id="State"
+				placeholder="State" />
+	</div>
+	<div class="form-group">
+		<label asp-for="CreateAddressRequest.PostalCode"></label>
+		<input asp-for="CreateAddressRequest.PostalCode"
+				type="text"
+				class="form-control"
+				placeholder="Postal Code" />
+	</div>
+	<button type="submit"
+			class="btn btn-primary">
+		Create Address
+	</button>
+</form>
